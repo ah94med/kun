@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kun Solutions - Crafting Stories, Building Brands</title>
+
+  <!-- Google Fonts: Poppins (body) & Space Grotesk (headings, buttons, links) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scrolling -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+  <!-- SplitType for word-level text animation -->
+  <script src="https://unpkg.com/split-type"></script>
+</head>
+
+<body>
+  <!-- Fixed Navigation Menu (Desktop) -->
+  <nav class="kun-fixed-nav kun-nav-desktop" id="kunNav">
+    <div class="kun-nav-inner">
+      <a href="#hero" class="kun-logo-link" data-section="hero">
+        <svg xmlns="http://www.w3.org/2000/svg" width="202" height="181" fill="none" viewBox="0 0 202 181">
+  <g clip-path="url(#a)">
+    <path fill="#3F3F3F" d="M202 0v180.707l-202 .09V29.367L29.368 0H202Z"/>
+    <path fill="#fff" d="m34.037 16.229.026 16.15H50.34v-16.15H34.037Z"/>
+    <path fill="#fff" d="M184.09 32.366V16.229H76.841v47.935h91.099v16.15H66.465V48.592H50.34v31.746H34.037V48.593H17.913v47.87H184.09V48.515h-91.1v-16.15h91.1Zm-58.903 79.937v52.268H76.815v-52.268H92.94v36.144h16.124v-36.144h16.124Zm10.531 52.268v-52.268h48.372v52.268h-16.124v-36.144h-16.124v36.144h-16.124Zm-89.453-32.158 20.11-20.11H46.818l-12.781 12.781v-12.781H17.913v52.268h16.124v-16.124H50.25v16.124h16.124v-32.158h-20.11Z"/>
+    <path fill="#fff" d="m34.037 16.229.026 16.15H50.34v-16.15H34.037Z"/>
+    <path fill="#fff" d="M184.09 32.366V16.229H76.841v47.935h91.099v16.15H66.465V48.592H50.34v31.746H34.037V48.593H17.913v47.87H184.09V48.515h-91.1v-16.15h91.1Zm-58.903 79.937v52.268H76.815v-52.268H92.94v36.144h16.124v-36.144h16.124Zm10.531 52.268v-52.268h48.372v52.268h-16.124v-36.144h-16.124v36.144h-16.124Zm-89.453-32.158 20.11-20.11H46.818l-12.781 12.781v-12.781H17.913v52.268h16.124v-16.124H50.25v16.124h16.124v-32.158h-20.11Z"/>
+  </g>
+  <defs>
+    <clipPath id="a">
+      <path fill="#fff" d="M0 0h202v180.797H0z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+      </a>
+
+      <div class="kun-nav-links">
+        <div class="kun-active-indicator" id="kunActiveIndicator"></div>
+        <a href="#focus" class="kun-nav-link" data-section="focus">About</a>
+        <a href="#services" class="kun-nav-link" data-section="services">Services</a>
+        <a href="#projects" class="kun-nav-link" data-section="projects">Work</a>
+        <a href="#kun-tact-us-section" class="kun-nav-link" data-section="kun-tact-us-section">Contact</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Fixed Navigation Menu (Mobile) -->
+  <nav class="kun-fixed-nav kun-nav-mobile" id="kunNavMobile">
+    <div class="kun-nav-inner">
+      <a href="#hero" class="kun-logo-link" data-section="hero">
+        <svg xmlns="http://www.w3.org/2000/svg" width="202" height="181" fill="none" viewBox="0 0 202 181">
+  <g clip-path="url(#b)">
+    <path fill="#3F3F3F" d="M202 0v180.707l-202 .09V29.367L29.368 0H202Z"/>
+    <path fill="#fff" d="m34.037 16.229.026 16.15H50.34v-16.15H34.037Z"/>
+    <path fill="#fff" d="M184.09 32.366V16.229H76.841v47.935h91.099v16.15H66.465V48.592H50.34v31.746H34.037V48.593H17.913v47.87H184.09V48.515h-91.1v-16.15h91.1Zm-58.903 79.937v52.268H76.815v-52.268H92.94v36.144h16.124v-36.144h16.124Zm10.531 52.268v-52.268h48.372v52.268h-16.124v-36.144h-16.124v36.144h-16.124Zm-89.453-32.158 20.11-20.11H46.818l-12.781 12.781v-12.781H17.913v52.268h16.124v-16.124H50.25v16.124h16.124v-32.158h-20.11Z"/>
+    <path fill="#fff" d="m34.037 16.229.026 16.15H50.34v-16.15H34.037Z"/>
+    <path fill="#fff" d="M184.09 32.366V16.229H76.841v47.935h91.099v16.15H66.465V48.592H50.34v31.746H34.037V48.593H17.913v47.87H184.09V48.515h-91.1v-16.15h91.1Zm-58.903 79.937v52.268H76.815v-52.268H92.94v36.144h16.124v-36.144h16.124Zm10.531 52.268v-52.268h48.372v52.268h-16.124v-36.144h-16.124v36.144h-16.124Zm-89.453-32.158 20.11-20.11H46.818l-12.781 12.781v-12.781H17.913v52.268h16.124v-16.124H50.25v16.124h16.124v-32.158h-20.11Z"/>
+  </g>
+  <defs>
+    <clipPath id="b">
+      <path fill="#fff" d="M0 0h202v180.797H0z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+      </a>
+
+      <div class="kun-nav-links">
+        <div class="kun-active-indicator" id="kunActiveIndicatorMobile"></div>
+        <a href="#focus" class="kun-nav-link" data-section="focus">About</a>
+        <a href="#services-mobile" class="kun-nav-link" data-section="services-mobile">Services</a>
+        <a href="#projects-mobile" class="kun-nav-link" data-section="projects-mobile">Work</a>
+        <a href="#kun-tact-us-section" class="kun-nav-link" data-section="kun-tact-us-section">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Section 1: Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-container">
+      <!-- Top Right Decorative Shape -->
+      <div class="decorative-blob">
+        <svg xmlns="http://www.w3.org/2000/svg" width="635" height="634" fill="none" viewBox="0 0 635 634">
+          <path fill="#EAC966" d="M633.65 0H0c0 347.61 286.039 633.65 633.65 633.65h.698L633.65 0Z" />
+        </svg>
+      </div>
+
+      <!-- Left Side Content -->
+      <div class="hero-left">
+        <div class="logo-placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 202 181">
+            <g clip-path="url(#a)">
+              <path fill="#3F3F3F" d="M202 0v180.707l-202 .09V29.367L29.368 0H202Z" />
+              <path fill="#fff" d="m34.036 16.23.026 16.15H50.34V16.23H34.036Z" />
+              <path fill="#fff"
+                d="M184.09 32.366V16.229H76.84v47.935h91.1v16.15H66.464V48.593H50.34v31.746H34.036V48.593H17.912v47.87H184.09V48.516h-91.1v-16.15h91.1Zm-58.904 79.938v52.268H76.814v-52.268h16.124v36.144h16.124v-36.144h16.124Zm10.531 52.268v-52.268h48.372v52.268h-16.124v-36.144h-16.124v36.144h-16.124Zm-89.453-32.158 20.11-20.11H46.817l-12.78 12.781v-12.781H17.911v52.268h16.124v-16.124H50.25v16.124h16.124v-32.158h-20.11Z" />
+              <path fill="#fff" d="m34.036 16.23.026 16.15H50.34V16.23H34.036Z" />
+              <path fill="#fff"
+                d="M184.09 32.366V16.229H76.84v47.935h91.1v16.15H66.464V48.593H50.34v31.746H34.036V48.593H17.912v47.87H184.09V48.516h-91.1v-16.15h91.1Zm-58.904 79.938v52.268H76.814v-52.268h16.124v36.144h16.124v-36.144h16.124Zm10.531 52.268v-52.268h48.372v52.268h-16.124v-36.144h-16.124v36.144h-16.124Zm-89.453-32.158 20.11-20.11H46.817l-12.78 12.781v-12.781H17.911v52.268h16.124v-16.124H50.25v16.124h16.124v-32.158h-20.11Z" />
+            </g>
+            <defs>
+              <clipPath id="a">
+                <path fill="#fff" d="M0 0h202v180.797H0z" />
+              </clipPath>
+            </defs>
+          </svg>
+
+        </div>
+
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="title-line">Kun Solutions</span>
+          </h1>
+
+          <div class="hero-taglines hide-on-mobile">
+            <p class="tagline">Crafting Stories</p>
+            <p class="tagline">Building Brands</p>
+            <p class="tagline">Transforming Businesses</p>
+          </div>
+          <div class="flip" id="flipper">
+            <span class="step"><p class="tagline">Crafting Stories</p></span>
+            <span class="step"><p class="tagline">Building Brands</p></span>
+            <span class="step"><p class="tagline">Transforming Businesses</p></span>
+          </div>
+
+          <div class="hero-buttons">
+            <a href="#kun-tact-us-section"><button class="btn btn-primary ">Kun-tact Us</button></a>
+            <button class="btn btn-secondary hide-on-mobile ">Explore Services</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side Graphics -->
+      <div class="hero-right">
+        <!-- Vertical Marquee Column -->
+        <div class="hero-marquee-placeholder">
+          <div class="hero-marquee-track">
+            <img src="images/kun-marquee-color.svg" alt="Kun marquee" class="hero-marquee-svg">
+            <img src="images/kun-marquee-color.svg" alt="Kun marquee duplicate" class="hero-marquee-svg">
+          </div>
+          <!-- Marquee bottom fade mask -->
+          <div class="hero-marquee-fade"></div>
+        </div>
+
+
+
+        <!-- Bottom Right Multi-layer SVG Container -->
+        <div class="layered-svg-container">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 227 226" class="hero-ill">
+            <g>
+              <g class="shape-3">
+                <g class="Layer">
+                  <g class="Group">
+                    <path fill="url(#a)" d="M113.86 112.86h112.83c0 61.9-50.93 112.83-112.83 112.83h-.12l.12-112.83Z"
+                      class="Vector" />
+                  </g>
+                </g>
+              </g>
+              <g class="shape-1">
+                <g class="Layer_1">
+                  <g class="Group">
+                    <path stroke="#000" stroke-dasharray="5.88 5.88" stroke-miterlimit="10" stroke-width="1.18"
+                      d="M54.34 53.49C1.41 106.56 39 197.13 113.95 197.13c46.5 0 84.19-37.69 84.19-84.19 0-75.06-90.79-112.59-143.8-59.45Z"
+                      class="circ border" />
+                  </g>
+                </g>
+              </g>
+              <g class="shape-2">
+                <g class="Layer_1">
+                  <g class="Group">
+                    <path fill="#fff"
+                      d="M61.86 61c-46.24 46.36-13.4 125.49 52.08 125.49 40.62 0 73.55-32.93 73.55-73.55 0-65.57-79.32-98.37-125.62-51.94h-.01Z"
+                      class="white circ" />
+                    <path fill="#3F3F3F"
+                      d="M101.77 100.8c-10.75 10.78-3.12 29.17 12.11 29.17 9.44 0 17.1-7.65 17.1-17.1 0-15.24-18.44-22.87-29.2-12.07h-.01Z"
+                      class="balck circ" />
+                  </g>
+                </g>
+              </g>
+            </g>
+            <defs>
+              <linearGradient id="a" x1="89.36" x2="199.12" y1="115.69" y2="188.43" class="a"
+                gradientUnits="userSpaceOnUse">
+                <stop offset=".36" stop-color="#8EC8A6" />
+                <stop offset="1" stop-color="#F3706A" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Focus Sticky Story -->
+  <section class="focus-section" id="focus">
+    <div class="focus-inner">
+      <div class="focus-graphic">
+
+        <div class="circ-border"
+          style="height: 300px;width: 300px;border: dashed 3px white;background-color: transparent;border-radius: 50%;position: absolute;">
+        </div>
+        <div class="circ-white"
+          style="height: 250px;width: 250px;background-color: #fff;border-radius: 50%;position: absolute;"></div>
+        <div class="circ-small"
+          style="height: 50px;width: 50px;background-color: #3F3F3F;border-radius: 50%;position: absolute;"></div>
+
+      </div>
+      <div class="focus-content">
+        <h2 class="focus-headline reveal-type" data-bg-color="rgba(255, 255, 255, 0.3)"
+          data-fg-color="rgba(255, 255, 255, 1)">
+          KUN is an impact-focused media consultancy helping brands cut through the noise and build a presence that
+          lasts.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-placeholder dark-section">
+    <!-- Section 3: Services Scroll (Desktop) -->
+    <section class="services-section services-desktop" id="services">
+      <!-- track gives scroll length -->
+      <div class="service-scroll-track">
+        <!-- sticky viewport stays pinned -->
+        <div class="service-sticky-viewport">
+          <!-- Left titles -->
+          <div class="titles-container">
+            <div class="service-title">Media Marketing</div>
+            <div class="service-title">Motion Graphics and 3D Animation</div>
+            <div class="service-title">Branding &amp; Identity</div>
+            <div class="service-title">Live Streaming and Live Production</div>
+            <div class="service-title">Project Management</div>
+            <div class="service-title">Digital Cinema Packaging (DCP)</div>
+            <div class="service-title">Events &amp; Exhibitions</div>
+            <div class="service-title">Audio &amp; Podcasting</div>
+            <div class="service-title">Social Media Management</div>
+            <div class="service-title">Software Engineering</div>
+            <div class="service-title">Website Design &amp; Development</div>
+          </div>
+
+          <!-- Right details -->
+          <div class="details-container">
+            <div class="service-details active">
+              <p>Video production and editing</p>
+              <p>Infographic and visual content design</p>
+              <p>Copywriting</p>
+              <p>Email marketing campaigns</p>
+            </div>
+            <div class="service-details">
+              <p>Animated Explainer Videos</p>
+              <p>Infographics &amp; Data Visualization</p>
+              <p>Social Media Motion Ads – Short</p>
+              <p>Product Visualization</p>
+              <p>Character Animation</p>
+              <p>VFX &amp; Special Effects</p>
+              <p>Augmented Reality (AR) &amp; Virtual Reality (VR) Content</p>
+            </div>
+            <div class="service-details">
+              <p>Brand positioning and storytelling</p>
+              <p>Logo and visual identity design</p>
+              <p>Brand guidelines development</p>
+            </div>
+            <div class="service-details">
+              <p>Broadcast-quality event streaming</p>
+              <p>Multi-platform broadcasting (YouTube, Facebook, Instagram, etc.)</p>
+              <p>Keynote presentations, Webcasts, and Interactive virtual events</p>
+              <p>High-definition, frame-accurate, and fully customized visuals</p>
+              <p>High-quality video and audio production</p>
+            </div>
+            <div class="service-details">
+              <p>Research and feasibility analysis</p>
+              <p>Tender preparation and bid evaluation</p>
+              <p>Contract negotiation and vendor management</p>
+              <p>Multi-stakeholder coordination</p>
+              <p>Financial oversight and procurement control</p>
+              <p>End-to-end project lifecycle management</p>
+            </div>
+            <div class="service-details">
+              <p>Multi-language DCP creation (audio &amp; subtitles)</p>
+              <p>DCI-compliant cinema delivery formats</p>
+              <p>Festival and distributor technical compliance</p>
+              <p>Precision encoding and mastering for theatrical release</p>
+            </div>
+            <div class="service-details">
+              <p>Exhibition design and execution</p>
+              <p>Thematic concept development</p>
+              <p>Brand-aligned customization</p>
+              <p>Gala and corporate event management</p>
+              <p>Concept-to-execution delivery</p>
+            </div>
+            <div class="service-details">
+              <p>Podcast production (recording, editing, mastering)</p>
+              <p>Audio branding (sonic logos, jingles, music)</p>
+              <p>Professional voiceover and narration</p>
+              <p>Sound design and mixing</p>
+            </div>
+            <div class="service-details">
+              <p>Content creation and scheduling</p>
+              <p>Paid social advertising</p>
+              <p>Analytics and performance reporting</p>
+              <p>Community management and moderation</p>
+            </div>
+            <div class="service-details">
+              <p>App Development</p>
+              <p>Enterprise systems and workflow automation</p>
+              <p>AI-powered solutions and intelligent integrations</p>
+              <p>Cloud-based platforms and API development</p>
+              <p>System optimization and ongoing support</p>
+            </div>
+            <div class="service-details">
+              <p>UX/UI design and prototyping</p>
+              <p>Responsive front-end development</p>
+              <p>CMS integration and customization</p>
+              <p>E-commerce and payment integration</p>
+              <p>Performance optimization and SEO foundations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Section 3: Services Mobile (Accordion) -->
+    <section class="services-section services-mobile" id="services-mobile">
+      <div class="services-mobile-container">
+        <h2 class="section-title">Services</h2>
+        
+        <div class="service-accordion">
+          <div class="service-accordion-item active">
+            <button class="service-accordion-header">
+              <span class="service-accordion-title">Media Marketing</span>
+              <span class="service-accordion-icon">+</span>
+            </button>
+            <div class="service-accordion-content">
+              <ul class="service-accordion-list">
+                <li>Video production and editing</li>
+                <li>Infographic and visual content design</li>
+                <li>Copywriting</li>
+                <li>Email marketing campaigns</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="service-accordion-item">
+            <button class="service-accordion-header">
+              <span class="service-accordion-title">Motion Graphics and 3D Animation</span>
+              <span class="service-accordion-icon">+</span>
+            </button>
+            <div class="service-accordion-content">
+              <ul class="service-accordion-list">
+                <li>Animated Explainer Videos</li>
+                <li>Infographics &amp; Data Visualization</li>
+                <li>Social Media Motion Ads – Short</li>
+                <li>Product Visualization</li>
+                <li>Character Animation</li>
+                <li>VFX &amp; Special Effects</li>
+                <li>Augmented Reality (AR) &amp; Virtual Reality (VR) Content</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="service-accordion-item">
+            <button class="service-accordion-header">
+              <span class="service-accordion-title">Branding &amp; Identity</span>
+              <span class="service-accordion-icon">+</span>
+            </button>
+            <div class="service-accordion-content">
+              <ul class="service-accordion-list">
+                <li>Brand positioning and storytelling</li>
+                <li>Logo and visual identity design</li>
+                <li>Brand guidelines development</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="service-accordion-item">
+            <button class="service-accordion-header">
+              <span class="service-accordion-title">Live Streaming and Live Production</span>
+              <span class="service-accordion-icon">+</span>
+            </button>
+            <div class="service-accordion-content">
+              <ul class="service-accordion-list">
+                <li>Broadcast-quality event streaming</li>
+                <li>Multi-platform broadcasting (YouTube, Facebook, Instagram, etc.)</li>
+                <li>Keynote presentations, Webcasts, and Interactive virtual events</li>
+                <li>High-definition, frame-accurate, and fully customized visuals</li>
+                <li>High-quality video and audio production</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="service-accordion-item">
+            <button class="service-accordion-header">
+              <span class="service-accordion-title">Project Management</span>
+              <span class="service-accordion-icon">+</span>
+            </button>
+            <div class="service-accordion-content">
+              <ul class="service-accordion-list">
+                <li>Research and feasibility analysis</li>
+                <li>Tender preparation and bid evaluation</li>
+                <li>Contract negotiation and vendor management</li>
+                <li>Multi-stakeholder coordination</li>
+                <li>Financial oversight and procurement control</li>
+                <li>End-to-end project lifecycle management</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="service-accordion-item">
+            <button class="service-accordion-header">
+              <span class="service-accordion-title">Digital Cinema Packaging (DCP)</span>
+              <span class="service-accordion-icon">+</span>
+            </button>
+            <div class="service-accordion-content">
+              <ul class="service-accordion-list">
+                <li>Multi-language DCP creation (audio &amp; subtitles)</li>
+                <li>DCI-compliant cinema delivery formats</li>
+                <li>Festival and distributor technical compliance</li>
+                <li>Precision encoding and mastering for theatrical release</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="service-accordion-item">
+            <button class="service-accordion-header">
+              <span class="service-accordion-title">Events &amp; Exhibitions</span>
+              <span class="service-accordion-icon">+</span>
+            </button>
+            <div class="service-accordion-content">
+              <ul class="service-accordion-list">
+                <li>Exhibition design and execution</li>
+                <li>Thematic concept development</li>
+                <li>Brand-aligned customization</li>
+                <li>Gala and corporate event management</li>
+                <li>Concept-to-execution delivery</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="service-accordion-item">
+            <button class="service-accordion-header">
+              <span class="service-accordion-title">Audio &amp; Podcasting</span>
+              <span class="service-accordion-icon">+</span>
+            </button>
+            <div class="service-accordion-content">
+              <ul class="service-accordion-list">
+                <li>Podcast production (recording, editing, mastering)</li>
+                <li>Audio branding (sonic logos, jingles, music)</li>
+                <li>Professional voiceover and narration</li>
+                <li>Sound design and mixing</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="service-accordion-item">
+            <button class="service-accordion-header">
+              <span class="service-accordion-title">Social Media Management</span>
+              <span class="service-accordion-icon">+</span>
+            </button>
+            <div class="service-accordion-content">
+              <ul class="service-accordion-list">
+                <li>Content creation and scheduling</li>
+                <li>Paid social advertising</li>
+                <li>Analytics and performance reporting</li>
+                <li>Community management and moderation</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="service-accordion-item">
+            <button class="service-accordion-header">
+              <span class="service-accordion-title">Software Engineering</span>
+              <span class="service-accordion-icon">+</span>
+            </button>
+            <div class="service-accordion-content">
+              <ul class="service-accordion-list">
+                <li>App Development</li>
+                <li>Enterprise systems and workflow automation</li>
+                <li>AI-powered solutions and intelligent integrations</li>
+                <li>Cloud-based platforms and API development</li>
+                <li>System optimization and ongoing support</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="service-accordion-item">
+            <button class="service-accordion-header">
+              <span class="service-accordion-title">Website Design &amp; Development</span>
+              <span class="service-accordion-icon">+</span>
+            </button>
+            <div class="service-accordion-content">
+              <ul class="service-accordion-list">
+                <li>UX/UI design and prototyping</li>
+                <li>Responsive front-end development</li>
+                <li>CMS integration and customization</li>
+                <li>E-commerce and payment integration</li>
+                <li>Performance optimization and SEO foundations</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      
+    </section>
+
+  </section>
+
+  <!-- Section 4: Projects with Slide-Up Image Reveal -->
+  <!-- Section 4: Projects with Skew Hover (Desktop) -->
+  <section class="projects-section projects-desktop" id="projects">
+    <div class="projects-container">
+      <!-- Image container - behind text -->
+      <div class="projects-image-container" id="projectsImageContainer">
+        <img id="projectImage" src="" alt="Project preview">
+      </div>
+
+      <!-- Projects list - in front of images -->
+      <div class="projects-list">
+        <div class="project-item" data-image="images/projects-images/lexus-thumb.jpg"
+          data-id="1">
+          <a class="link-style-reset" href="projects/lexus-ls400-drifting-animation.html">
+            <p class="project-title">Lexus LS400 Drifting Animation</p>
+          </a>
+          <div class="project-separator"></div>
+        </div>
+      
+        <div class="project-item" data-image="images/projects-images/kun-reel-thumb.jpg"
+          data-id="2">
+          <a class="link-style-reset" href="projects/kun-motion-graphics-reel.html">
+            <p class="project-title">KUN Motion Graphics Reel</p>
+          </a>
+          <div class="project-separator"></div>
+        </div>
+      
+        <div class="project-item" data-image="https://images.unsplash.com/photo-1624317937315-0ced8736c9e9?w=1080"
+          data-id="3">
+          <a class="link-style-reset" href="projects/abu-dhabi-municipality.html">
+            <p class="project-title">Abu Dhabi Municipality</p>
+          </a>
+          <div class="project-separator"></div>
+        </div>
+      
+        <div class="project-item" data-image="https://images.unsplash.com/photo-1638871947845-2f904778bebd?w=1080"
+          data-id="4">
+          <a class="link-style-reset" href="projects/uae-national-day-tdra.html">
+            <p class="project-title">UAE National Day - TDRA</p>
+            
+          </a>
+          <div class="project-separator"></div>
+        </div>
+      
+        <div class="project-item" data-image="https://images.unsplash.com/photo-1592455664133-47ae5228ef7d?w=1080"
+          data-id="5">
+          <a class="link-style-reset" href="projects/abu-dhabi-sustainability-week.html">
+            <p class="project-title">Abu Dhabi Sustainability Week</p>
+          </a>
+          <div class="project-separator"></div>
+        </div>
+      
+        <div class="project-item" data-image="images/projects-images/Puck-thumb.jpg"
+          data-id="6">
+          <a class="link-style-reset" href="projects/puckcast-arla.html">
+            <p class="project-title">PuckCast - Arla</p>
+          </a>
+          <div class="project-separator"></div>
+        </div>
+      
+        <div class="project-item" data-image="images/projects-images/FPF.jpeg"
+          data-id="7">
+          <a class="link-style-reset" href="projects/gulf-food-manufacturing.html">
+            <p class="project-title">Gulf Food Manufacturing Exhibition</p>
+          </a>
+          <div class="project-separator"></div>
+        </div>
+      
+        <div class="project-item" data-image="images/projects-images/Lubenz_Exhibition.png"
+          data-id="8">
+          <a class="link-style-reset" href="projects/mining-show-dubai-2023.html">
+            <p class="project-title">The Mining Show Dubai 2023</p>
+          </a>
+        </div>
+      </div>
+      </div>
+
+    <!-- Horizontal Marquee -->
+    <div class="horizontal-marquee">
+      <div class="horizontal-marquee-track">
+        <img src="images/kun-marquee-white.svg" alt="Kun marquee" class="horizontal-marquee-svg">
+        <img src="images/kun-marquee-white.svg" alt="Kun marquee duplicate" class="horizontal-marquee-svg">
+        <img src="images/kun-marquee-white.svg" alt="Kun marquee duplicate" class="horizontal-marquee-svg">
+        <img src="images/kun-marquee-white.svg" alt="Kun marquee duplicate" class="horizontal-marquee-svg">
+      </div>
+    </div>
+  </section>
+  
+  <!-- Section 4: Projects Mobile (Cards) -->
+  <section class="projects-section projects-mobile" id="projects-mobile">
+    <div class="projects-mobile-container">
+      <h2 class="section-title">Projects</h2>
+      
+      <div class="projects-mobile-grid">
+        <a href="projects/lexus-ls400-drifting-animation.html" class="project-card link-style-reset">
+          <img src="/images/projects-images/lexus-thumb.jpg" alt="Lexus LS400 Drifting Animation">
+          <h3 class="project-card-title">Lexus LS400 Drifting Animation</h3>
+        </a>
+        
+        <a href="projects/kun-motion-graphics-reel.html" class="project-card link-style-reset">
+          <img src="/images/projects-images/kun-reel-thumb.jpg" alt="KUN Motion Graphics Reel">
+          <h3 class="project-card-title">KUN Motion Graphics Reel</h3>
+        </a>
+        
+        <a href="projects/abu-dhabi-municipality.html" class="project-card">
+          <img src="https://images.unsplash.com/photo-1624317937315-0ced8736c9e9?w=1080" alt="Abu Dhabi Municipality">
+          <h3 class="project-card-title">Abu Dhabi Municipality</h3>
+        </a>
+        
+        <a href="projects/uae-national-day-tdra.html" class="project-card">
+          <img src="https://images.unsplash.com/photo-1638871947845-2f904778bebd?w=1080" alt="UAE National Day - TDRA">
+          <h3 class="project-card-title">UAE National Day - TDRA</h3>
+        </a>
+        
+        <a href="projects/abu-dhabi-sustainability-week.html" class="project-card">
+          <img src="https://images.unsplash.com/photo-1592455664133-47ae5228ef7d?w=1080" alt="Abu Dhabi Sustainability Week">
+          <h3 class="project-card-title">Abu Dhabi Sustainability Week</h3>
+        </a>
+        
+        <a href="projects/puckcast-arla.html" class="project-card">
+          <img src="/images/projects-images/Puck-thumb.jpg" alt="PuckCast - Arla">
+          <h3 class="project-card-title">PuckCast - Arla</h3>
+        </a>
+        
+        <a href="projects/gulf-food-manufacturing.html" class="project-card">
+          <img src="/images/projects-images/FPF.jpeg" alt="Gulf Food Manufacturing Exhibition">
+          <h3 class="project-card-title">Gulf Food Manufacturing Exhibition</h3>
+        </a>
+        
+        <a href="projects/mining-show-dubai-2023.html" class="project-card">
+          <img src="/images/projects-images/Lubenz_Exhibition.png" alt="The Mining Show Dubai 2023">
+          <h3 class="project-card-title">The Mining Show Dubai 2023</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section  -->
+  <footer class="section-placeholder dark-section"
+    style=" display: flex; align-items: center; justify-content: center;">
+    <!-- Scoped Section Start -->
+    <div id="kun-tact-us-section">
+      <div class="kun-container">
+        <!-- Header Section -->
+        <header class="kun-header-container">
+          <svg viewBox="0 0 1440 250" class="kun-header-svg" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <linearGradient id="kunHeaderGradient" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#F3706A" />
+                <stop offset="64%" stop-color="#8EC8A6" />
+                <stop offset="100%" stop-color="#8EC8A6" />
+              </linearGradient>
+            </defs>
+            <text x="50%" y="80%" text-anchor="middle">
+              Kun-tact Us
+            </text>
+          </svg>
+        </header>
+
+
+
+        <!-- Main Content Area -->
+        <div class="kun-content-wrapper">
+
+          <!-- Left Column: Contact Info -->
+          <section class="kun-contact-info">
+            <a href="https://wa.me/971585966858" class="kun-contact-link">
+              +971 58 596 6858
+            </a>
+            <a href="tel:+971561600558" class="kun-contact-link">
+              +971 56 160 0558
+            </a>
+            <a href="mailto:info@kun.solutions" class="kun-contact-link">
+              info@kun.solutions
+            </a>
+          </section>
+
+          <!-- Right Column: Graphic -->
+          <section class="kun-graphic-container hide-on-mobile">
+            <div class="kun-graphic-scaler">
+              <div class="kun-graphic-box">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="681" height="547" fill="none" viewBox="0 0 681 547">
+                  <g opacity=".47">
+                    <path stroke="#fff" stroke-dasharray="6.29 6.29" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2.01" d="M399.775 123.486h279.75v421.31h-418.88" />
+                    <path stroke="#fff" stroke-dasharray="6.29 6.29" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2.01"
+                      d="M676.945 125.156c0 232.44-188.09 420.53-420.53 420.53h2.58c-142.6 0-257.99-115.39-257.99-257.99 0-89.84 63.35-163.69 153.19-163.69h-2.58c54.19 0 98.04 43.85 98.04 98.04 0 35.65-28.85 64.5-64.5 64.5" />
+                  </g>
+                  <path fill="#8EC8A6"
+                    d="M228.645 491.676h-77.02V42.866c91.57-91.57 248.15-26.72 248.15 102.79v174.9l-171.13 171.13v-.01Z" />
+                  <path fill="url(#a)"
+                    d="M152.205 230.546h142.64c0 78.25-64.39 142.64-142.64 142.64h-.16l.16-142.64Z" />
+                  <path fill="#fff"
+                    d="M86.465 164.976c-58.45 58.61-16.94 158.64 65.83 158.64 51.35 0 92.98-41.63 92.98-92.98 0-82.9-100.28-124.35-158.81-65.66Z" />
+                  <path stroke="#fff" stroke-dasharray="7.44 7.44" stroke-miterlimit="10" stroke-width="1.49"
+                    d="M76.955 155.496c-66.91 67.09-19.39 181.58 75.36 181.58 58.78 0 106.43-47.65 106.43-106.43 0-94.89-114.78-142.34-181.78-75.16l-.01.01Z" />
+                  <path fill="#F1706A" d="m325.935 353.136-61.21 61.05v-61.05h61.21Z" />
+                  <path stroke="#CECECE" stroke-dasharray="6.58 6.58" stroke-miterlimit="10" stroke-width="1.32"
+                    d="M264.845 433.416v-80.6" />
+                  <path stroke="#E2E2E2" stroke-miterlimit="10" stroke-width="1.35"
+                    d="m264.845 352.816 61.24.09v19.2m.04-19.28-61.38 61.38m61.44-42.31-61.52 61.52" />
+                  <defs>
+                    <linearGradient id="a" x1="121.215" x2="259.975" y1="234.116" y2="326.066"
+                      gradientUnits="userSpaceOnUse">
+                      <stop offset=".36" stop-color="#8EC8A6" />
+                      <stop offset="1" stop-color="#F3706A" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+
+
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <footer class="kun-footer">
+          <p>© 2026 KUN FZC LLC. All rights reserved.</p>
+        </footer>
+      </div>
+    </div>
+    <!-- Scoped Section End -->
+  </footer>
+  <!-- Footer Section End -->
+
+  <script src="main.js"></script>
+</body>
+
+</html>
