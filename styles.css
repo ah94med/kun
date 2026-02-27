@@ -1134,9 +1134,15 @@ height: 100%;
   position: fixed;
   bottom: 20px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate3d(-50%, 140%, 0); /* hidden (down) */
+    transition: transform 350ms cubic-bezier(.2,.7,.2,1);
+  will-change: transform;
   z-index: 9999;
   pointer-events: none; /* Allow clicks to pass through empty areas */
+}
+
+.kun-nav-desktop.is-visible{
+  transform: translate(-50%, 0);
 }
 
 /* Hide mobile nav on desktop */
@@ -1306,6 +1312,12 @@ height: 100%;
     margin-bottom: 5rem;
 }
 
+}
+
+@media (min-width: 968px) {
+       .hide-on-desktop {
+    display: none !important;
+}
 }
 
 /* Section Title (shared) */

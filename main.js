@@ -739,3 +739,37 @@ console.log('Mobile navigation loaded');
     i = nextIndex;
   }, HOLD_MS);
 })();
+
+
+// Nav animation 
+(() => {
+  const nav = document.querySelector('.kun-nav-desktop');
+  if (!nav) return;
+
+  let lastScroll = window.pageYOffset;
+  let ticking = false;
+  const SHOW_AFTER = 100;     // don't show near top
+  const TOLERANCE = 8;        // ignore tiny scroll changes
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const current = window.pageYOffset;
+        const diff = current - lastScroll;
+
+        if (Math.abs(diff) > TOLERANCE) {
+          if (current > SHOW_AFTER && diff < 0) {
+            nav.classList.add('is-visible');   // scrolling up
+          } else {
+            nav.classList.remove('is-visible'); // scrolling down
+          }
+          lastScroll = current;
+        }
+
+        ticking = false;
+      });
+
+      ticking = true;
+    }
+  }, { passive: true });
+})();
