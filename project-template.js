@@ -1,33 +1,8 @@
-// Initialize Lenis smooth scrolling
-const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    direction: 'vertical',
-    gestureDirection: 'vertical',
-    smooth: true,
-    mouseMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 2,
-    infinite: false,
-});
-
-// Lenis animation frame
-function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
+// Native smooth scrolling (better trackpad compatibility)
+// Lenis disabled due to trackpad conflicts
 
 // Register GSAP ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
-
-// Update ScrollTrigger on Lenis scroll
-lenis.on('scroll', ScrollTrigger.update);
-
-// GSAP ticker for smooth integration
-gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-});
 
 // Disable lag smoothing for better performance
 gsap.ticker.lagSmoothing(0);
