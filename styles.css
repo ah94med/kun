@@ -1584,8 +1584,8 @@ transition: all .5s ease-in-out;
   inset: 0;
   backface-visibility: hidden;
   transform-style: preserve-3d;
-
   opacity: 0;
+  visibility: hidden;
   transform: translateY(-100%) rotateX(-90deg); /* default: above + tipped */
   transition:
     transform 700ms cubic-bezier(.2,.7,.2,1),
@@ -1595,10 +1595,12 @@ transition: all .5s ease-in-out;
 
 .flip .step.is-active{
   opacity: 1;
+  visibility: visible;
   transform: translateY(0) rotateX(0);
 }
 
 .flip .step.is-leaving{
   opacity: 0;
+  visibility: hidden;
   transform: translateY(100%) rotateX(90deg);  /* leave: go down + tip away */
 }
