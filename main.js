@@ -1,40 +1,9 @@
-// Lenis smooth scrolling (optimized for trackpads)
-const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    direction: 'vertical',
-    gestureDirection: 'vertical',
-    smooth: true,
-    mouseMultiplier: 0.5,        // Reduced for better trackpad control
-    smoothTouch: false,
-    touchMultiplier: 1.5,        // Reduced to prevent over-scrolling
-    infinite: false,
-    syncTouch: true,             // Better touch/trackpad sync
-    touchInertiaMultiplier: 15,  // Smoother trackpad deceleration
-});
+// Native smooth scrolling (better trackpad compatibility)
+// Lenis disabled due to trackpad conflicts
 
-function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf);
-
-// Integrate Lenis with GSAP ScrollTrigger
+// Integrate GSAP ScrollTrigger with native scroll
 gsap.registerPlugin(ScrollTrigger);
-
-lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.lagSmoothing(0);
-
-// Optional: Disable Lenis on devices with problematic trackpads
-// Uncomment if issues persist on specific devices
-/*
-const isProblematicDevice = /Mac|iPad|iPhone/.test(navigator.userAgent);
-if (isProblematicDevice) {
-    lenis.destroy();
-    console.log('Lenis disabled for better trackpad experience');
-}
-*/
 
 // Hero illustration spin animation on scroll
 gsap.to('.hero-ill', {
