@@ -90,7 +90,10 @@ gsap.timeline({
     const X_OFFSET_BASE = 64;
     const X_MIN = -600;
   
-    const state = { activeIndex: 0 };
+    const state = { 
+      activeIndex: 0,
+      isAnimating: false // Prevent clicks during scroll animation
+    };
   
     function setActiveIndex(idx) {
       details.forEach((d, i) => d.classList.toggle("active", i === idx));
@@ -132,7 +135,7 @@ gsap.timeline({
       setActiveIndex(currentIndexInt);
     }
   
-    ScrollTrigger.create({
+    const scrollTriggerInstance = ScrollTrigger.create({
       trigger: track,
       start: "top top",
       end: "bottom bottom",
@@ -142,6 +145,38 @@ gsap.timeline({
         state.activeIndex = self.progress * (totalItems - 1);
         updatePositions();
       }
+    });
+  
+    // Click handler for titles
+    titles.forEach((title, index) => {
+      title.addEventListener('click', () => {
+        // Prevent clicks during animation
+        if (state.isAnimating) return;
+        
+        state.isAnimating = true;
+        
+        // Calculate target scroll position for this service
+        const progress = index / (totalItems - 1);
+        
+        // Get the scroll trigger's start and end positions
+        const scrollStart = scrollTriggerInstance.start;
+        const scrollEnd = scrollTriggerInstance.end;
+        const scrollRange = scrollEnd - scrollStart;
+        
+        // Calculate exact scroll position for this service
+        const targetScroll = scrollStart + (scrollRange * progress);
+        
+        // Smooth scroll to position using native scrollTo
+        window.scrollTo({
+          top: targetScroll,
+          behavior: 'smooth'
+        });
+        
+        // Re-enable clicking after animation (estimate 1 second for smooth scroll)
+        setTimeout(() => {
+          state.isAnimating = false;
+        }, 500);
+      });
     });
   
     // Initial layout

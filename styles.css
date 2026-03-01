@@ -136,6 +136,10 @@ height: 100%;
     flex-wrap: wrap;
 }
 
+.hero-buttons .btn {
+    min-width: 12rem;
+}
+
 .btn {
     font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     padding: 1rem 2rem;
@@ -163,14 +167,12 @@ height: 100%;
 .btn-secondary {
     background: #3f3f3f;
   color: #fff;
-  border: 2px solid #3f3f3f;
 }
 
 .btn-secondary:hover {
     background: #535353;
     color: #fff;
     transform: translateY(-2px);
-     border: 2px solid #535353;
 }
 
 /* Right Side Graphics */
@@ -493,12 +495,22 @@ height: 100%;
     transform-origin: left center;
     will-change: transform, opacity;
     color: white;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, opacity 0.3s ease;
     text-wrap: wrap;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .service-title:hover {
+    opacity: 0.8;
   }
   
   .service-title.active {
     color: #8FC8A6;
+  }
+  
+  .service-title.active:hover {
+    opacity: 1;
   }
   
   /* Right details - 50% */
