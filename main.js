@@ -1,20 +1,20 @@
 // Native smooth scrolling (better trackpad compatibility)
 // Lenis disabled due to trackpad conflicts
 
-let lenis = new Lenis({
-  lerp: 0.05,           // Linear interpolation intensity (smoothness)
-  wheelMultiplier: 0.7, // Mouse wheel scroll speed
-  gestureOrientation: "vertical", // Scroll direction
-  normalizeWheel: false, // Don't normalize wheel events
-  smoothTouch: false,    // Disable smooth scrolling on touch devices
-});
+// let lenis = new Lenis({
+//   lerp: 0.05,           // Linear interpolation intensity (smoothness)
+//   wheelMultiplier: 0.7, // Mouse wheel scroll speed
+//   gestureOrientation: "vertical", // Scroll direction
+//   normalizeWheel: false, // Don't normalize wheel events
+//   smoothTouch: false,    // Disable smooth scrolling on touch devices
+// });
 
 
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
+// function raf(time) {
+//   lenis.raf(time);
+//   requestAnimationFrame(raf);
+// }
+// requestAnimationFrame(raf);
 
 
 // Integrate GSAP ScrollTrigger with native scroll
