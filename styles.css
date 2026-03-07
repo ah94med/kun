@@ -917,7 +917,7 @@ height: 100%;
 }
 
 #kun-tact-us-section .kun-header-svg text {
-    font-size: 15vw;
+    font-size: clamp(3rem, 8vw, 5rem);
     font-weight: 700;
     fill: none;
     stroke: url(#kunHeaderGradient); /* Renamed ID to avoid conflicts */
@@ -960,10 +960,11 @@ height: 100%;
 #kun-tact-us-section .kun-contact-info {
     flex: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 30px;
     align-items: center; /* Center on mobile */
-    padding-top: 40px;
+    /* padding-top: 40px; */
+    justify-content: center;
 }
 
 #kun-tact-us-section .kun-contact-link {
@@ -1074,6 +1075,13 @@ height: 100%;
     font-size: 14px;
 }
 
+.kunHeaderGradient {
+    background: linear-gradient(to right, #F3706A 0%, #8EC8A6 64%, #8EC8A6 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+
 /* Desktop Responsiveness */
 @media (min-width: 768px) {
     #kun-tact-us-section .kun-container {
@@ -1085,7 +1093,7 @@ height: 100%;
     }
 
     #kun-tact-us-section .kun-contact-link {
-        font-size: 78px;
+        font-size: 2rem;
     }
 
     #kun-tact-us-section .kun-dashed-line-container {
@@ -1112,7 +1120,7 @@ height: 100%;
 
     #kun-tact-us-section .kun-contact-info {
         align-items: flex-start; /* Left align on desktop */
-        padding-top: 80px;
+        /* padding-top: 80px; */
     }
 
     #kun-tact-us-section .kun-graphic-container {
