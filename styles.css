@@ -599,6 +599,8 @@ height: 100%;
     .service-details p {
       font-size: clamp(1rem, 3vw, 1.4rem);
     }
+
+    
   }
   
 
@@ -961,6 +963,7 @@ height: 100%;
     flex: 1;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 30px;
     align-items: center; /* Center on mobile */
     /* padding-top: 40px; */
@@ -1161,7 +1164,7 @@ background-clip: text;
   position: fixed;
   bottom: 20px;
   left: 50%;
-  transform: translate3d(-50%, 140%, 0); /* hidden (down) */
+  transform: translate3d(-50%, 150%, 0); /* hidden (down) */
     transition: transform 350ms cubic-bezier(.2,.7,.2,1);
   will-change: transform;
   z-index: 9999;
@@ -1169,6 +1172,10 @@ background-clip: text;
 }
 
 .kun-nav-desktop.is-visible{
+  transform: translate(-50%, 0);
+}
+
+.kun-nav-mobile.is-visible{
   transform: translate(-50%, 0);
 }
 
@@ -1292,10 +1299,16 @@ background-clip: text;
 
     #kun-tact-us-section .kun-contact-info {
         padding-top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .kunHeaderGradient {
+        font-size: 9vw;
     }
 
     #kun-tact-us-section .kun-contact-link {
-        font-size: 9vw;
+        font-size: 8vw;
     }
 }
 
